@@ -1,6 +1,8 @@
 RSpec.describe Category, type: :model do
   describe 'associations' do
+    it { should have_many(:products) }
     it { should belong_to(:parent).optional.class_name('Category') }
+    it { should have_many(:children).class_name('Category') }
   end
 
   describe 'validations' do
