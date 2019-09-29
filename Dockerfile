@@ -8,8 +8,7 @@ ENV APP_HOME /gift_wishlist
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
-# package.json yarn.lock
-COPY Gemfile Gemfile.lock $APP_HOME/
+COPY Gemfile Gemfile.lock package.json yarn.lock $APP_HOME/
 
 RUN bundle install -j 4 --retry 5
 RUN yarn install
