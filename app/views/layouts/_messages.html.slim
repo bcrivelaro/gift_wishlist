@@ -1,0 +1,7 @@
+.container
+  - flash.each do |type, msg|
+    .alert.alert-dismissable.fade.show[class=flash_class(type)]
+      = msg
+      button.close[type="button" data-dismiss="alert" aria-label="Close"]
+        span[aria-hidden="true"]
+          | ×
