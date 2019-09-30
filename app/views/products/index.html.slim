@@ -1,0 +1,19 @@
+.row
+  .col-3
+    h4= t('.categories')
+    ul
+      - @categories.each do |category|
+        = render 'category_menu', category: category
+
+  .col-9
+    h4= t('.products')
+    - if @filtered_by_category
+      = t('.filtering_by', category: @filtered_by_category.name)
+
+    .row
+      - @products.each do |product|
+        .card.product-card
+          = image_tag('no-image', class: 'card-img-top')
+          .card-body
+            p.card-text
+              = product.name

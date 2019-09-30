@@ -7,9 +7,13 @@ class Category < ApplicationRecord
 
   scope :top_level, -> { where(parent: nil) }
 
-  def descendants
+  def self_and_descendents_ids
+    [id] + descendants_ids
+  end
+
+  def descendants_ids
     Category.where(parent: self).map do |child|
-      [child] + child.descendants
+      [child.id] + child.descendants_ids
     end.flatten
   end
 end
