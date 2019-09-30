@@ -1,0 +1,7 @@
+pt-BR:
+  public:
+    wishlists:
+      index:
+        wishlists: Listas
+        name: Nome
+        view: Ver

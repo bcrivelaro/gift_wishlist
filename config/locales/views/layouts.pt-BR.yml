@@ -2,4 +2,5 @@ pt-BR:
   layouts:
     navbar:
       wishlists: Listas
+      sign_in: Entrar
       sign_out: Sair

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     end
 
     unauthenticated do
-      root 'devise/sessions#new'
+      root 'public/wishlists#index'
     end
   end
 
@@ -14,6 +14,12 @@ Rails.application.routes.draw do
     resources :products, only: %i[index new create destroy],
                          module: 'wishlists' do
       post :create
+    end
+  end
+
+  namespace 'public' do
+    resources :wishlists, only: :index do
+      resources :products, only: :index, module: 'wishlists'
     end
   end
 end

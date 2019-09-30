@@ -11,9 +11,5 @@ pt-BR:
         back_to_wishlist: Voltar à lista
         all_categories: Todas categorias
         filtering_by: Filtrando por %{category}
-      product_wishlist:
-        bought: Comprado
-        available: Disponível
-        delete: Excluir
       product:
         add: Adicionar

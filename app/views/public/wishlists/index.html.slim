@@ -1,0 +1,18 @@
+h2.d-inline-block= t('.wishlists')
+hr
+
+table.table
+  thead.thead-dark
+    tr
+      th= t('.name')
+      th
+  tbody
+    - @wishlists.each do |wishlist|
+      tr
+        td= wishlist.name
+        td
+          .btn-group.btn-group-sm
+            = link_to t('.view'), public_wishlist_products_path(wishlist),
+                                  class: 'btn btn-primary'
+
+= will_paginate @wishlists, list_classes: %w(pagination justify-content-center)

@@ -1,0 +1,8 @@
+pt-BR:
+  public:
+    wishlists:
+      products:
+        index:
+          products_of_wishlist: Produtos da lista %{wishlist}
+          all_categories: Todas categorias
+          filtering_by: Filtrando por %{category}

@@ -8,4 +8,4 @@ li.list-group-item
 - if category.children.any?
   .list-group.list-group-child.collapse[id=category.name.parameterize]
     - category.children.each do |child|
-      = render 'category_menu', category: child
+      = render 'shared/category_menu', category: child

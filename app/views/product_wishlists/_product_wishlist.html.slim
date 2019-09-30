@@ -1,0 +1,22 @@
+.card.product-card
+  = image_tag('no-image', class: 'card-img-top product-image')
+  .card-body
+    .card-text
+      p.text-truncate.product-name= product_wishlist.product.name
+      p= number_to_currency(product_wishlist.product.price)
+      - if product_wishlist.bought
+        span.badge.badge-success= t('.bought')
+      - else
+        span.badge.badge-dark= t('.available')
+        - unless user_signed_in?
+          = link_to t('.buy'),
+                      root_path,
+                      method: :post,
+                      class: 'float-right btn btn-sm btn-outline-success'
+      - if user_signed_in?
+        - unless product_wishlist.bought
+          = link_to t('.delete'),
+                    wishlist_product_path(product_wishlist,
+                                          wishlist_id: @wishlist.id),
+                    method: :delete,
+                    class: 'float-right btn btn-sm btn-outline-danger'

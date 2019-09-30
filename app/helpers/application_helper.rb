@@ -13,8 +13,10 @@ module ApplicationHelper
   def menu_path(params)
     if current_page?(wishlist_products_path)
       wishlist_products_path(params)
-    else
+    elsif current_page?(new_wishlist_product_path)
       new_wishlist_product_path(params)
+    else
+      public_wishlist_products_path(params)
     end
   end
 end
