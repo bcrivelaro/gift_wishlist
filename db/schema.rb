@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_29_224916) do
+ActiveRecord::Schema.define(version: 2019_09_30_005921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 2019_09_29_224916) do
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_categories_on_name", unique: true
     t.index ["parent_id"], name: "index_categories_on_parent_id"
+  end
+
+  create_table "product_wishlists", force: :cascade do |t|
+    t.bigint "product_id"
+    t.bigint "wishlist_id"
+    t.boolean "bought", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_wishlists_on_product_id"
+    t.index ["wishlist_id"], name: "index_product_wishlists_on_wishlist_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -58,6 +68,8 @@ ActiveRecord::Schema.define(version: 2019_09_29_224916) do
   end
 
   add_foreign_key "categories", "categories", column: "parent_id"
+  add_foreign_key "product_wishlists", "products"
+  add_foreign_key "product_wishlists", "wishlists"
   add_foreign_key "products", "categories"
   add_foreign_key "wishlists", "users"
 end

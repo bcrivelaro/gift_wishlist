@@ -1,6 +1,7 @@
 RSpec.describe Product, type: :model do
   describe 'associations' do
     it { should belong_to(:category) }
+    it { should have_many(:product_wishlists) }
   end
 
   describe 'validations' do

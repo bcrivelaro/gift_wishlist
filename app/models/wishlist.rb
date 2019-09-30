@@ -1,5 +1,6 @@
 class Wishlist < ApplicationRecord
   belongs_to :user
+  has_many :product_wishlists
 
   validates :name, presence: true
 
