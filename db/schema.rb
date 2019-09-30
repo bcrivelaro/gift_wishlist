@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_30_005921) do
+ActiveRecord::Schema.define(version: 2019_09_30_212343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2019_09_30_005921) do
   create_table "product_wishlists", force: :cascade do |t|
     t.bigint "product_id"
     t.bigint "wishlist_id"
-    t.boolean "bought", null: false
+    t.boolean "bought", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_product_wishlists_on_product_id"
@@ -60,10 +60,8 @@ ActiveRecord::Schema.define(version: 2019_09_30_005921) do
   create_table "wishlists", force: :cascade do |t|
     t.bigint "user_id"
     t.string "name", null: false
-    t.string "token", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["token"], name: "index_wishlists_on_token", unique: true
     t.index ["user_id"], name: "index_wishlists_on_user_id"
   end
 

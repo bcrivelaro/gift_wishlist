@@ -1,0 +1,26 @@
+.row
+  .col-lg-3.col-sm-12
+    ul.list-group.list-group-root
+      li.list-group-item= link_to t('.all_categories'),
+                                  wishlist_products_path(@wishlist)
+      - @categories.each do |category|
+        = render 'category_menu', category: category
+
+  .col-lg-9.col-sm-12
+    .row
+      .col-6
+        h4= t('.products_of_wishlist', wishlist: @wishlist.name)
+      .col-6
+        .float-right
+          = link_to t('.add_product'), new_wishlist_product_path(@wishlist),
+                                       class: 'btn btn-sm btn-primary'
+    - if @filtered_by_category.present?
+      .row
+        .col-12
+          p= t('.filtering_by', category: @filtered_by_category.name)
+
+    #products.row
+      = render 'product_wishlists'
+    .row.justify-content-center
+      .infinite-scrolling
+        = will_paginate @product_wishlists

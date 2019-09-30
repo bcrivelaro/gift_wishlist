@@ -1,0 +1,6 @@
+- if obj.errors.any?
+  .card.border-danger.mb-3
+    .card-body.text-danger
+      ul.mb-0
+        - obj.errors.full_messages.each do |msg|
+          li= msg

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, only: %i[registrations sessions]
   devise_scope :user do
     authenticated :user do
-      root 'products#index'
+      root 'wishlists#index'
     end
 
     unauthenticated do
@@ -10,5 +10,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :products, only: :index
+  resources :wishlists, except: :show do
+    resources :products, only: %i[index new create destroy],
+                         module: 'wishlists' do
+      post :create
+    end
+  end
 end

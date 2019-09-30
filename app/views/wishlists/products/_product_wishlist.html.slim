@@ -1,0 +1,15 @@
+.card.product-card
+  = image_tag('no-image', class: 'card-img-top product-image')
+  .card-body
+    .card-text
+      p.text-truncate.product-name= product_wishlist.product.name
+      p= number_to_currency(product_wishlist.product.price)
+      - if product_wishlist.bought
+        span.badge.badge-success= t('.bought')
+      - else
+        span.badge.badge-info= t('.available')
+        = link_to t('.delete'),
+                  wishlist_product_path(product_wishlist,
+                                        wishlist_id: @wishlist.id),
+                  method: :delete,
+                  class: 'float-right btn btn-sm btn-outline-danger'

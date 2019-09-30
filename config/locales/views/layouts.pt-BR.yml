@@ -1,0 +1,5 @@
+pt-BR:
+  layouts:
+    navbar:
+      wishlists: Listas
+      sign_out: Sair

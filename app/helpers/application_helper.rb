@@ -9,4 +9,12 @@ module ApplicationHelper
       flash_type.to_s
     end
   end
+
+  def menu_path(params)
+    if current_page?(wishlist_products_path)
+      wishlist_products_path(params)
+    else
+      new_wishlist_product_path(params)
+    end
+  end
 end

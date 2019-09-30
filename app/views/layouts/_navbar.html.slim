@@ -5,6 +5,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
   #navbar.collapse.navbar-collapse.text-white
     - if user_signed_in?
       ul.navbar-nav.mr-auto
+        li= link_to t('.wishlists'), wishlists_path, class: 'nav-link'
       .ml-auto
         ul.navbar-nav.mr-auto
           li.nav-item= current_user.email

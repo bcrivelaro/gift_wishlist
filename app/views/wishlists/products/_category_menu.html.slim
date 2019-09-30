@@ -1,0 +1,11 @@
+li.list-group-item
+  = link_to category.name, menu_path(filter_by_category: category.id)
+  - if category.children.any?
+    = link_to '#', data: { toggle: 'collapse', target: "##{category.name.parameterize}" } do
+      span.badge.badge-dark.float-right
+        span.fa.fa-chevron-down.fa-menu
+
+- if category.children.any?
+  .list-group.list-group-child.collapse[id=category.name.parameterize]
+    - category.children.each do |child|
+      = render 'category_menu', category: child

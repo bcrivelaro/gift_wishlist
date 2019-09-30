@@ -1,0 +1,15 @@
+pt-BR:
+  wishlists:
+    index:
+      wishlists: Listas
+      new: Nova
+      name: Nome
+      view: Ver
+      edit: Alterar
+      delete: Excluir
+      are_you_sure?: Você tem certeza?
+      actions: Ações
+    new:
+      new_wishlist: Nova lista
+    edit:
+      edit_wishlist: Alterando lista

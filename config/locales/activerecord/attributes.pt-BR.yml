@@ -1,0 +1,38 @@
+pt-BR:
+  created_at: &created_at Criado em
+  updated_at: &updated_at Atualizado em
+  activerecord:
+    attributes:
+      category:
+        name: Nome
+        parent: Parente
+        parent_id: Parente
+        created_at: *created_at
+        updated_at: *updated_at
+      product_wishlist:
+        product: Produto
+        product_id: Produto
+        wishlist: Lista
+        wishlist_id: Lista
+        bought: Comprado
+        created_at: *created_at
+        updated_at: *updated_at
+      product:
+        category: Categoria
+        category_id: Categoria
+        name: Nome
+        description: Descrição
+        price: Preço
+        created_at: *created_at
+        updated_at: *updated_at
+      user:
+        email: Email
+        password: Senha
+        created_at: *created_at
+        updated_at: *updated_at
+      wishlist:
+        user: Usuário
+        user_id: Usuário
+        name: Nome
+        created_at: *created_at
+        updated_at: *updated_at

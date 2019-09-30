@@ -1,19 +1,31 @@
 class FilterProductsByCategory
-  def initialize(category)
+  def initialize(category, collection)
     @category = category
+    @collection = collection
   end
 
-  def self.call(category)
-    new(category).call
+  def self.call(category, collection)
+    new(category, collection).call
   end
 
   def call
-    return Product.all unless category
+    return collection unless category
 
-    Product.where(category: category.self_and_descendents_ids)
+    query =
+      if klass.is_a?(Product)
+        { category: category.self_and_descendents_ids }
+      else
+        { products: { category: category.self_and_descendents_ids } }
+      end
+
+    collection.where(query)
   end
 
   private
 
-  attr_reader :category
+  attr_reader :category, :collection
+
+  def klass
+    collection.first.class
+  end
 end

@@ -1,0 +1,25 @@
+h2.d-inline-block= t('.wishlists')
+.float-right
+  = link_to t('.new'), new_wishlist_path, class: 'btn btn-primary'
+hr
+
+table.table
+  thead.thead-dark
+    tr
+      th= t('.name')
+      th= t('.actions')
+  tbody
+    - @wishlists.each do |wishlist|
+      tr
+        td= wishlist.name
+        td
+          .btn-group.btn-group-sm
+            = link_to t('.view'), wishlist_products_path(wishlist),
+                                  class: 'btn btn-primary'
+            = link_to t('.edit'), edit_wishlist_path(wishlist),
+                                  class: 'btn btn-info'
+            = link_to t('.delete'), wishlist_path(wishlist), method: :delete,
+                                    data: { confirm: t('.are_you_sure?') },
+                                    class: 'btn btn-danger'
+
+= will_paginate @wishlists, list_classes: %w(pagination justify-content-center)

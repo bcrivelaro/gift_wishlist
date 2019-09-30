@@ -23,8 +23,8 @@ gem 'slim', '4.0.1'
 gem 'slim-rails', '3.2.0'
 # https://github.com/plataformatec/devise
 gem 'devise', '4.7.1'
-# https://github.com/delef/will_paginate-bootstrap4
-gem 'will_paginate-bootstrap4', '0.2.2'
+# https://github.com/mislav/will_paginate
+gem 'will_paginate', '3.1.8'
 
 group :development, :test do
   # https://github.com/rspec/rspec-rails
@@ -58,4 +58,6 @@ group :development do
   gem 'devise-bootstrap-views', '1.1.0'
   # https://github.com/slim-template/html2slim
   gem 'html2slim', '0.2.0'
+  # https://github.com/glebm/i18n-tasks
+  gem 'i18n-tasks', '0.9.29'
 end

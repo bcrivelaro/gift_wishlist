@@ -1,0 +1,19 @@
+pt-BR:
+  wishlists:
+    products:
+      index:
+        add_product: Adicionar produto
+        all_categories: Todas categorias
+        products_of_wishlist: Produtos da lista %{wishlist}
+        filtering_by: Filtrando por %{category}
+      new:
+        add_product_to_wishlist: Adicionar produto à %{wishlist}
+        back_to_wishlist: Voltar à lista
+        all_categories: Todas categorias
+        filtering_by: Filtrando por %{category}
+      product_wishlist:
+        bought: Comprado
+        available: Disponível
+        delete: Excluir
+      product:
+        add: Adicionar

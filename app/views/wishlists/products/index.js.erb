@@ -1,0 +1,7 @@
+$('#products').append('<%= j render 'product_wishlists' %>');
+<% if @product_wishlists.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate @product_wishlists %>');
+<% else %>
+  $(window).off('scroll');
+  $('.pagination').remove();
+<% end %>

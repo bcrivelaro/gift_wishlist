@@ -1,0 +1,9 @@
+pt-BR:
+  wishlists:
+    products:
+      create:
+        success: Produto adicionado com sucesso!
+        something_went_wrong: Ops, algo de errado aconteceu. Tente novamente.
+      destroy:
+        success: Produto excluído com sucesso!
+        cannot_destroy_bought: Não é possível excluir um produto que já foi comprado.

@@ -1,0 +1,8 @@
+= render 'shared/errors', obj: @wishlist
+
+= form_for(@wishlist, html: { class: 'form-horizontal', role: 'form' }) do |f|
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: 'form-control'
+  br
+  = f.submit class: 'btn btn-primary'

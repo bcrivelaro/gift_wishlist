@@ -1,5 +1,0 @@
-li= link_to category.name, products_path(filter_by_category: category.id)
-- if category.children.any?
-  ul
-    - category.children.each do |child|
-      = render 'category_menu', category: child

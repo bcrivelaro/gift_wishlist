@@ -2,5 +2,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
          :validatable
 
-  has_many :wishlists
+  has_many :wishlists, dependent: :destroy
 end
