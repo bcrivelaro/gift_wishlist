@@ -12,8 +12,16 @@ RSpec.describe Wishlists::ProductsController, type: :request do
       end
 
       it { expect(response).to be_successful }
-      it { expect(assigns(:product_wishlists).all? { |t| t.is_a? ProductWishlist }).to eq(true) }
-      it { expect(assigns(:product_wishlists).map(&:wishlist).uniq).to eq([wishlist]) }
+      it do
+        expect(
+          assigns(:product_wishlists).all? { |t| t.is_a? ProductWishlist }
+        ).to eq(true)
+      end
+      it do
+        expect(
+          assigns(:product_wishlists).map(&:wishlist).uniq
+        ).to eq([wishlist])
+      end
       it { expect(assigns(:product_wishlists).count).to eq(5) }
     end
 

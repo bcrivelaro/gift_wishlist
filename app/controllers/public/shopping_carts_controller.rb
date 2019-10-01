@@ -16,15 +16,20 @@ class Public::ShoppingCartsController < ApplicationController
                   notice: t('.product_added_to_cart')
     else
       flash[:error] = t('.something_went_wrong')
-      redirect_to public_wishlist_products_path(@product_wishlist.wishlist)
+      redirect_to public_wishlists_path
     end
   end
 
   def checkout
-    current_shopping_cart.product_wishlists.update_all(bought: true)
-    current_shopping_cart.destroy
-    session[:shopping_cart_id] = nil
-    redirect_to public_wishlists_path, notice: t('.thank_you')
+    if current_shopping_cart.product_wishlists.any?
+      current_shopping_cart.product_wishlists.update_all(bought: true)
+      current_shopping_cart.destroy
+      session[:shopping_cart_id] = nil
+      redirect_to public_wishlists_path, notice: t('.thank_you')
+    else
+      flash[:error] = t('.you_need_at_least_one_product')
+      redirect_to public_wishlists_path
+    end
   end
 
   private

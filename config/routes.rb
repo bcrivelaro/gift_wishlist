@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace 'public' do
+  namespace :public do
     resources :wishlists, only: :index do
       resources :products, only: :index, module: 'wishlists'
     end

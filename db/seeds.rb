@@ -6,7 +6,7 @@ second_level_categories =
     FactoryBot.create(:category, parent: tlc)
   end
 third_level_categories =
- second_level_categories.map do |slc|
+  second_level_categories.map do |slc|
     FactoryBot.create(:category, parent: slc)
   end
 

@@ -2,7 +2,7 @@
   = image_tag('no-image', class: 'card-img-top product-image')
   .card-body
     .card-text
-      p.text-truncate.product-name= product_wishlist.product.name
+      small.text-truncate.product-name= product_wishlist.product.name
       p= number_to_currency(product_wishlist.product.price)
       - if current_shopping_cart&.product_wishlists&.include?(product_wishlist)
         span.badge.badge-warning= t('.in_cart')

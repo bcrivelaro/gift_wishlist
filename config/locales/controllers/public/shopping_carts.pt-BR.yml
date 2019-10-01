@@ -6,3 +6,4 @@ pt-BR:
         something_went_wrong: Ops, algo de errado aconteceu. Tente novamente.
       checkout:
         thank_you: Obrigado!
+        you_need_at_least_one_product: Você precisa de ao menos um produto para pagar.

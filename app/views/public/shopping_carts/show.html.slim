@@ -17,8 +17,10 @@ table.table
 
 .row.justify-content-center
   h4= t('.total') + ' ' + number_to_currency(@total)
-.row.justify-content-center
-  = link_to t('.checkout'), checkout_public_shopping_cart_path,
-                              method: :post,
-                              data: { confirm: t('.checkout_all_products') },
-                              class: 'btn btn-primary'
+
+- if current_shopping_cart.can_checkout?
+  .row.justify-content-center
+    = link_to t('.checkout'), checkout_public_shopping_cart_path,
+                                method: :post,
+                                data: { confirm: t('.checkout_all_products') },
+                                class: 'btn btn-primary'

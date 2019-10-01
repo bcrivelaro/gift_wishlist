@@ -1,24 +1,34 @@
-# README
+### Goal
+Users can register and create wishlists, selecting and filtering products from database.
+Visitors can list all wishlists, enter one, add products to cart, and checkout so it will mock that cart products were bought.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Development
 
-Things you may want to cover:
+_Make sure you have the latest stable version of docker and docker-compose._
 
-* Ruby version
+Run:
+```bash
+$ docker-compose build
+$ docker-compose up
+$ docker-compose run app rails db:create db:migrate db:seed
+```
 
-* System dependencies
+_NOTE: If you are having permission problems when using Linux, try to run the following commands before proceeding:_
 
-* Configuration
+```bash
+$ docker-compose down
+$ sudo chown -R $USER:$USER .
+```
 
-* Database creation
+_NOTE: If you are having assets problems, try manually install dependencies (happens on Alpine image):_
 
-* Database initialization
+```bash
+$ docker-compose run app yarn install
+```
 
-* How to run the test suite
+### Automated tests
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Run:
+```bash
+$ docker-compose run app rspec
+```

@@ -2,7 +2,7 @@
   = image_tag('no-image', class: 'card-img-top product-image')
   .card-body
     .card-text
-      p.text-truncate.product-name= product.name
+      small.text-truncate.product-name= product.name
       p= number_to_currency(product.price)
       = link_to t('.add'), wishlist_product_create_path(wishlist_id: @wishlist.id,
                                                         product_id: product.id),
