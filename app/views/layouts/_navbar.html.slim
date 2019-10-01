@@ -21,5 +21,9 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
         li= link_to t('.wishlists'), public_wishlists_path, class: 'nav-link'
       .ml-auto
         ul.navbar-nav.mr-auto
-          li.nav-item
-            = link_to t('.sign_in'), new_user_session_path, class: 'nav-link'
+          li.nav-item= link_to public_shopping_cart_path, class: 'nav-link' do
+            = t('.shopping_cart')
+            '
+            span.fa.fa-shopping-cart
+          li.nav-item= link_to t('.sign_in'), new_user_session_path,
+                                              class: 'nav-link'

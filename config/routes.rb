@@ -21,5 +21,10 @@ Rails.application.routes.draw do
     resources :wishlists, only: :index do
       resources :products, only: :index, module: 'wishlists'
     end
+
+    resource :shopping_cart, only: :show do
+      post :add_product
+      post :checkout
+    end
   end
 end

@@ -1,0 +1,11 @@
+pt-BR:
+  public:
+    shopping_carts:
+      show:
+        shopping_cart: Carrinho
+        wishlist: Lista
+        product: Produto
+        price: Preço
+        total: Total
+        checkout: Pagar
+        checkout_all_products: Deseja pagar todos os produtos?

@@ -1,0 +1,24 @@
+h2= t('.shopping_cart')
+hr
+
+table.table
+  thead.thead-dark
+    tr
+      th= t('.wishlist')
+      th= t('.product')
+      th= t('.price')
+  tbody
+    - @product_wishlists.each do |product_wishlist|
+      tr
+        td= link_to product_wishlist.wishlist.name,
+                    public_wishlist_products_path(product_wishlist.wishlist)
+        td= product_wishlist.product.name
+        td= number_to_currency(product_wishlist.product.price)
+
+.row.justify-content-center
+  h4= t('.total') + ' ' + number_to_currency(@total)
+.row.justify-content-center
+  = link_to t('.checkout'), checkout_public_shopping_cart_path,
+                              method: :post,
+                              data: { confirm: t('.checkout_all_products') },
+                              class: 'btn btn-primary'

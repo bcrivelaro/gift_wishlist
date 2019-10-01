@@ -1,0 +1,8 @@
+pt-BR:
+  public:
+    shopping_carts:
+      add_product:
+        product_added_to_cart: Produto adicionado ao carrinho!
+        something_went_wrong: Ops, algo de errado aconteceu. Tente novamente.
+      checkout:
+        thank_you: Obrigado!

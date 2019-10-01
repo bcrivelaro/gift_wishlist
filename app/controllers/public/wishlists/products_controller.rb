@@ -1,4 +1,4 @@
-class Public::Wishlists::ProductsController < ApplicationController
+class Public::Wishlists::ProductsController < PublicController
   before_action :set_wishlist
   before_action :set_categories, :set_filtered_by_category, only: %i[index new]
 
@@ -6,6 +6,7 @@ class Public::Wishlists::ProductsController < ApplicationController
     collection = @wishlist.product_wishlists.includes(:product)
     @product_wishlists = FilterProductsByCategory.call(@filtered_by_category,
                                                        collection)
+                                                 .order(:bought)
                                                  .paginate(page: params[:page],
                                                            per_page: 10)
 

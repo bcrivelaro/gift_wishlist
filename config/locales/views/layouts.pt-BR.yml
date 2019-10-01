@@ -2,5 +2,6 @@ pt-BR:
   layouts:
     navbar:
       wishlists: Listas
+      shopping_cart: Carrinho
       sign_in: Entrar
       sign_out: Sair

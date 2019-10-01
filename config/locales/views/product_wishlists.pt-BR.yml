@@ -1,6 +1,7 @@
 pt-BR:
   product_wishlists:
     product_wishlist:
+      in_cart: No carrinho
       bought: Comprado
       available: Disponível
       buy: Comprar
