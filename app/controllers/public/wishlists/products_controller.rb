@@ -1,4 +1,4 @@
-class Public::Wishlists::ProductsController < PublicController
+class Public::Wishlists::ProductsController < ApplicationController
   before_action :set_wishlist
   before_action :set_categories, :set_filtered_by_category, only: %i[index new]
 

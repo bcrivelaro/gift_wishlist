@@ -1,4 +1,4 @@
-class Public::ShoppingCartsController < PublicController
+class Public::ShoppingCartsController < ApplicationController
   before_action :set_product_wishlist, only: :add_product
 
   def show

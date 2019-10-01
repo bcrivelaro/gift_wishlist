@@ -12,7 +12,7 @@ class FilterProductsByCategory
     return collection unless category
 
     query =
-      if klass.is_a?(Product)
+      if klass == Product
         { category: category.self_and_descendents_ids }
       else
         { products: { category: category.self_and_descendents_ids } }

@@ -1,5 +1,5 @@
-require 'rails_helper'
-
 RSpec.describe ShoppingCart, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'associations' do
+    it { should have_and_belong_to_many(:product_wishlists) }
+  end
 end

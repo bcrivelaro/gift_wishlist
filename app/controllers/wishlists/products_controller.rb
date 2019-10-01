@@ -7,6 +7,7 @@ class Wishlists::ProductsController < ApplicationController
     collection = @wishlist.product_wishlists.includes(:product)
     @product_wishlists = FilterProductsByCategory.call(@filtered_by_category,
                                                        collection)
+                                                 .order(:bought)
                                                  .paginate(page: params[:page],
                                                            per_page: 10)
 
